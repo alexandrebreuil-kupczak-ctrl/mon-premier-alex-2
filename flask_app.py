@@ -21,6 +21,7 @@ def accueil():
     return "Bienvenue sur le site d'Alexandre 🚀"
 
 
+
 # ---------------------------------------------------------------
 #  Ajoutez vos nouvelles routes ci-dessous 👇
 # ---------------------------------------------------------------
