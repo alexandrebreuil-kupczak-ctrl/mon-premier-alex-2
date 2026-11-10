@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav aria-label="Navigation principale"><a href="/">Accueil</a><a href="/presentation">Présentation</a><a href="/formulaire">Formulaire</a></nav>
+    <main>
+        <h1>Faisons connaissance</h1>
+        <form action="/salut" method="post">
+            <label>Votre prénom : <input type="text" name="prenom" required></label>
+            <label>Votre ville : <input type="text" name="ville" required></label>
+            <label>Votre couleur préférée :
+                <select name="couleur"><option value="tomato">Rouge</option><option value="teal">Vert</option><option value="royalblue">Bleu</option></select>
+            </label>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p>Le formulaire utilise POST ; essayez aussi GET en remplaçant temporairement la méthode dans le code.</p>
+    </main>
+</body>
+</html>

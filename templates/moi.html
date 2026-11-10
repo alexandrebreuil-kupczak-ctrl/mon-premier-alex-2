@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ce que le serveur sait de vous</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+    <nav><a href="/">Accueil</a><a href="/presentation">Présentation</a></nav>
+    <main>
+        <h1>Ce que je sais de vous 🔍</h1>
+        <p><strong>Adresse IP (partiellement masquée) :</strong> {{ ip }}</p>
+        <p><strong>Navigateur :</strong> {{ navigateur }}</p>
+        <p><strong>Langues :</strong> {{ langues }}</p>
+        <p>Pour protéger la vie privée, l’adresse IP complète n’est pas affichée.</p>
+        <h2>En-têtes reçus</h2>
+        <ul>{% for nom, valeur in entetes %}<li><strong>{{ nom }}</strong> : {{ valeur }}</li>{% endfor %}</ul>
+    </main>
+</body>
+</html>

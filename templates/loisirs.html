@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mes loisirs</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+    <nav aria-label="Navigation principale"><a href="/">Accueil</a><a href="/presentation">Présentation</a><a href="/loisirs">Loisirs</a><a href="/formulaire">Formulaire</a><a href="/horloge">Horloge</a></nav>
+    <main><h1>Mes loisirs</h1><ul>{% for loisir in loisirs %}<li>{{ loisir }}</li>{% endfor %}</ul></main>
+</body>
+</html>

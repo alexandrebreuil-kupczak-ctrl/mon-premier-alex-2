@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Horloge</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav><a href="/">Accueil</a><a href="/presentation">Présentation</a></nav>
+    <main>
+        <h1>Il est <span id="heure">…</span></h1>
+        <p id="message" aria-live="polite"></p>
+    </main>
+    <script>
+        // Ce code s’exécute dans le navigateur et interroge l’API du serveur.
+        async function mettreAJour() {
+            try {
+                const reponse = await fetch("/api/heure");
+                if (!reponse.ok) throw new Error("Réponse HTTP " + reponse.status);
+                const donnees = await reponse.json();
+                document.getElementById("heure").textContent = donnees.heure;
+                document.getElementById("message").textContent = donnees.message + " — " + donnees.date;
+            } catch (erreur) {
+                document.getElementById("message").textContent = "Impossible de récupérer l’heure.";
+            }
+        }
+        mettreAJour();
+        setInterval(mettreAJour, 1000);
+    </script>
+</body>
+</html>
